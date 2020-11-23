@@ -1,5 +1,6 @@
 /* RESET RULES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
 
 :root {
@@ -24,6 +25,228 @@
   margin: 0;
   box-sizing: border-box;
 }
+/*DASHBOARD AND LOGO BARANGAY*/
+img, svg {
+  width: 126px;
+  margin-top: 14px;
+  vertical-align: middle;
+  margin-bottom: -1px;
+}
+b, strong {
+  font-weight: bolder;
+  color: black;
+  font-size: 28px;
+  margin-left: 25px;
+  font-weight: 800;
+}
+.down {
+  width: 1087px;
+  margin-left: -1px;
+  margin-top: 27px;
+ border-top: 3px solid black;
+
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+
+
+/*BOXES YUNG TOTAL KEME*/
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e3e6f0;
+  border-radius: .35rem;
+}
+
+.card-bodyregister {
+  flex: 1.1 auto;
+  min-width: 1px;
+  padding: 1.1rem;
+  width: 182px;
+  font-family: sans-serif;
+  font-weight: 900;
+}
+.border-left-warning {
+  border-left: .40rem solid #d8dc0b!important;
+  width: 478px;
+  margin-left: 1130px;
+  height: 156px;
+  margin-top: -160px;
+}
+.card.shadow.border-left-warning.py-3 {
+  border-left: .40rem solid #9b1313!important;
+  width: 235px;
+  margin-left: 1130px;
+  height: 132px;
+  margin-top: 9px;
+}
+.card-bodyfemale {
+  flex: 1.1 auto;
+  min-height: 1px;
+  padding: 1.3rem;
+  width: 220px;
+  font-family: sans-serif;
+  font-weight: 800;
+}
+.card.shadow.border-left-warning.py-4 {
+  border-left: .40rem solid #0b9ddc!important;
+  width: 235px;
+  margin-left: 1370px;
+  height: 132px;
+  margin-top: -132px;
+}
+.card-bodymale {
+  flex: 1.1 auto;
+  min-height: 1px;
+  padding: 1.3rem;
+  width: 224px;
+  font-family: sans-serif;
+  font-weight: 800;
+}
+
+.card.shadow.border-left-warning.py-5 {
+  border-left: .40rem solid;
+  width: 478px;
+  margin-left: 1130px;
+  height: 132px;
+  margin-top: 9px;
+}
+.card-bodyvoters {
+  flex: 1.1 auto;
+  min-height: 1px;
+  padding: 1.3rem;
+  width: 540px;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+/*Yung gray sa gitna*/
+.card-header.py-3 {
+  width: 1050px;
+  background-color: gray;
+  font-weight: 800;
+  margin-top: -250px;
+}
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+  background-color: rgb(255,255,255);
+  width: 1050px;
+}
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #858796;
+}
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+ 
+}
+.mt-2, .my-2 {
+  margin-top: .5rem!important;
+}
+table {
+  border-collapse: collapse;
+}
+
+/* HR sa may purok*/
+.down2 {
+  width: 478px;
+  margin-left: 1130px;
+  margin-top: 93px;
+  border-top: 2px solid black;
+}
+
+.pb-3, .py-3 {
+  padding-bottom: 1rem!important;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #f8f9fc;
+  border-bottom: 1px solid #e3e6f0;
+}
+body {
+  margin: 0;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #858796;
+  text-align: left;
+  background-color: #fff;
+}
+/*PUROK AREAS*/
+.card-header.py-4 {
+  width: 478px;
+  background-color: gray;
+  font-weight: 800;
+  margin-left: 1130px;
+  margin-top: -13px;
+  height: 58px;
+}
+.card-body2 {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+  background-color: rgb(255,255,255);
+  width: 478px;
+  height: 273px;
+  margin-left: 1130px;
+  margin-top: -9px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -.75rem;
+  margin-left: -.75rem;
+}
+.mt-2, .my-2 {
+  margin-top: .5rem!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ul {
   list-style: none;
