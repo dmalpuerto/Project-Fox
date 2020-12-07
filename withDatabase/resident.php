@@ -1,6 +1,7 @@
 <?php
 require_once('connectDB.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -237,7 +238,7 @@ require_once('connectDB.php');
                               
 					   <div class ="col-md-5" style='margin-bottom: 20px;'>
 					  <label>Birth Place</label>
-                        <input class = "form-control" id="Birthplace" type = "text" placeholder="Enter Birth Place" required=''>
+                        <input class = "form-control" id="BirthPlace" name="BirthPlace" type = "text" placeholder="Enter Birth Place" required=''>
                       </div>
                      </div>
                           
@@ -246,7 +247,7 @@ require_once('connectDB.php');
                     <div class ="col-md-5" style='margin-bottom: 20px;'>
 
                          <label>Occupation</label>
-                         <input class = "form-control" id="Occupation" type = "text" placeholder= "Enter Occupation" required=''>
+                         <input class = "form-control" id="Occupation" name="Occupation" type = "text" placeholder= "Enter Occupation" required=''>
                          </div>    
                     
                     <div class ="col-md-5" style='margin-bottom: 20px;'>
@@ -373,9 +374,13 @@ require_once('connectDB.php');
                       <div class="col-md-6" style="margin-bottom: 10px">
                           <label><b>Other Information</b></label>
                           
+                          
                           </div>
                       </div>
-                      
+                       <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-submit" id="register" name="register">Save changes</button>
+      </div>
                     
                     </div>
                  
@@ -385,10 +390,6 @@ require_once('connectDB.php');
           
           
         
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-submit" onclick="return myFunction()" id="register" name="register">Save changes</button>
       </div>
     </div>
   </div>
