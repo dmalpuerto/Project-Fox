@@ -1,13 +1,17 @@
 <?php
-
+$db_host = 'localhost';
 $db_user = "root";
 $db_pass = "";
 $db_name = "barangay";
 
 $db = new PDO('mysql:host=localhost;dbname='.$db_name. ';charset=utf8', $db_user, $db_pass);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$mysqli=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+ if ($mysqli-> connect_error){
+     die("Connection Failed".$mysqli-> connect_error);
+ }
 
-
+  
 
 
 
@@ -18,7 +22,6 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $servername = "localhost";
 $db_username = "root";
 $db_password = "";
-
 try {
   $conn = new PDO("mysql:host=$servername;dbname=binfosystem", $db_username, $db_password);
   // set the PDO error mode to exception
@@ -27,9 +30,6 @@ try {
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
-
-
-
 /*
 $sql = "CREATE DATABASE registra";
 if ($conn->query($sql) === TRUE) {
@@ -37,8 +37,6 @@ if ($conn->query($sql) === TRUE) {
 } else {
   echo "Error creating database: " . $conn->error;
 }
-
-
 $conn->close();
 */
 ?>
