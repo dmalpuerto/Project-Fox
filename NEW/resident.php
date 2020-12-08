@@ -1,7 +1,8 @@
-<? php
+<?php
 require_once('connectDB.php');
 $result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +49,7 @@ $result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
     
 
 </head>
-<body class="animsition fixed-top one">
+<body class="animsition">
     <div class="page-wrapper">
         
 
@@ -235,36 +236,56 @@ $result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
                             </div>
                         </div>
                      </div>
+                        <div class="table-responsive table--no-card m-b-30">
+                        <table class="table table-borderless table--no-card m-b-30 table-striped" id = "table">
                           
-                                    <table class="table table-borderless table--no-card m-b-30 table-striped" id = "table">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Last Name</th>
-                                            <th>First Name</th>
-                                            <th>Middle Initial</th>
-                                            <th>Gender</th>
-                                            <th>Civil Status</th>
-                                            <th>Birth Date</th>
-                                          
-                                        </tr>  
-                                        <?php
-                                          while($res=mysqli_fetch_array($result)){
+                            <tr>
+                                <th>ID</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Initial</th>
+                                <th>Gender</th>
+                                <th>Civil Status</th>
+                                <th>Birth Place</th>            
+                                <th>Birth Date</th>
+                                <th>Occupation</th>
+                                <th>Sector</th>
+                                <th>Nationality</th>
+                                <th>Religion</th>
+                                <th>City Address</th>
+                                <th>Provincial Address</th>
+                                <th>Home Number</th>
+                                <th>Mobile Number</th>
+                                <th>E-mail</th>
+                            </tr>
+                           
+                            <?php
+                              while($res=mysqli_fetch_array($result)){
 
-                                              echo '<tr>';
-                                              echo '<td width=60>'. $res['id'] .'</td>' ;
-                                               echo '<td width=200>'. $res['lastName'] .'</td>' ;
-                                              echo '<td>'. $res['firstName'] .'</td>';
-                                              echo '<td>'. $res['middleInitial'] .'</td>';
-                                              echo '<td>'. $res['gender'] .'</td>';
-                                              echo '<td>'. $res['civilStatus'] .'</td>';
-                                              echo '<td>'. $res['birthDate'] .'</td>';
-                                              echo '</tr>';
-                                          }
-                                          ?>    
-                                    </table>
-                               
+                                  echo '<tr>';
+                                  echo '<td width=60>'. $res['id'] .'</td>' ;
+                                   echo '<td width=200>'. $res['lastName'] .'</td>' ;
+                                  echo '<td>'. $res['firstName'] .'</td>';
+                                  echo '<td>'. $res['middleInitial'] .'</td>';
+                                  echo '<td>'. $res['gender'] .'</td>';
+                                  echo '<td>'. $res['civilStatus'] .'</td>';
+                                  echo '<td>'. $res['birthDate'] .'</td>';
+                                  echo '<td>'. $res['birthPlace'] .'</td>';
+                                  echo '<td>'. $res['occupation'] .'</td>';
+                                  echo '<td>'. $res['sector'] .'</td>';
+                                  echo '<td>'. $res['nationality'] .'</td>';
+                                  echo '<td>'. $res['religion'] .'</td>';
+                                  echo '<td>'. $res['cityAddress'] .'</td>';
+                                  echo '<td>'. $res['provincialAddress'] .'</td>';
+                                  echo '<td>'. $res['homeNumber1'] .'</td>';
+                                  echo '<td>'. $res['mobileNumber1'] .'</td>';
+                                  echo '<td>'. $res['emailAddress'] .'</td>';
+                                  echo '</tr>';              
+                              }
+                              ?>    
+                            </table>
+                    </div>
                           
-                    
                </div>
             </div>
         </div>
@@ -372,7 +393,7 @@ $result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
                               
 					   <div class ="col-md-5" style='margin-bottom: 20px;'>
 					  <label>Birth Place</label>
-                        <input class = "form-control" id="Birthplace" type = "text" placeholder="Enter Birth Place" required=''>
+                        <input class = "form-control" id="BirthPlace" name="BirthPlace" type = "text" placeholder="Enter Birth Place" required=''>
                       </div>
                      </div>
                           
@@ -381,7 +402,7 @@ $result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
                     <div class ="col-md-5" style='margin-bottom: 20px;'>
 
                          <label>Occupation</label>
-                         <input class = "form-control" id="Occupation" type = "text" placeholder= "Enter Occupation" required=''>
+                         <input class = "form-control" id="Occupation" name="Occupation" type = "text" placeholder= "Enter Occupation" required=''>
                          </div>    
                     
                     <div class ="col-md-5" style='margin-bottom: 20px;'>
@@ -549,4 +570,3 @@ $result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
 
 </html>
 <!-- end document-->
-?>
