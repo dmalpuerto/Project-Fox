@@ -1,5 +1,6 @@
 <?php
 require_once('connectDB.php');
+$result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +46,24 @@ require_once('connectDB.php');
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    
+    <style type="text/css">
+        table{
+    border-collapse:separate;
+    width: 200%;
+    color: black;
+    font-size: 17px;
+    text-align: center;
+    background-color: azure;
+                
+}
+th{
+    background-color: black;
+    color: white;
+
+     
+
+    </style>
 
 </head>
 
@@ -115,8 +134,63 @@ require_once('connectDB.php');
                                 </div>
                             </div>
                         </div>
+                
                         
-                        
+                        </div>
+                    <br>
+                    <br>
+                    
+                        <table border="2">
+                            <tr>
+                                <th>ID</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Initial</th>
+                                <th>Gender</th>
+                                <th>Civil Status</th>
+                                <th>Birth Date</th>
+                                <th>Occupation</th>
+                                <th>Sector</th>
+                                <th>Nationality</th>
+                                <th>Religion</th>
+                                <th>City Address</th>
+                                <th>Provincial Address</th>
+                                <th>Home Number</th>
+                                <th>Mobile Number</th>
+                                <th>E-mail</th>
+                            </tr>
+                            <?php
+          while($res=mysqli_fetch_array($result)){
+              
+              echo '<tr>';
+              echo '<td width=60>'. $res['id'] .'</td>' ;
+               echo '<td width=200>'. $res['lastName'] .'</td>' ;
+              echo '<td>'. $res['firstName'] .'</td>';
+              echo '<td>'. $res['middleInitial'] .'</td>';
+              echo '<td>'. $res['gender'] .'</td>';
+              echo '<td>'. $res['civilStatus'] .'</td>';
+              echo '<td>'. $res['birthDate'] .'</td>';
+              echo '<td>'. $res['occupation'] .'</td>';
+              echo '<td>'. $res['sector'] .'</td>';
+              echo '<td>'. $res['nationality'] .'</td>';
+              echo '<td>'. $res['religion'] .'</td>';
+              echo '<td>'. $res['cityAddress'] .'</td>';
+              echo '<td>'. $res['provincialAddress'] .'</td>';
+              echo '<td>'. $res['homeNumber1'] .'</td>';
+              echo '<td>'. $res['mobileNumber1'] .'</td>';
+              echo '<td>'. $res['emailAddress'] .'</td>';
+              echo '</tr>';
+             
+              
+          }
+          
+          
+          
+          ?>
+          </table>
+                    
+                            
+                       
                         
                         
                         
@@ -385,8 +459,8 @@ require_once('connectDB.php');
                     </div>
                  
                 </form>
-              </div>   
-          
+              </div>  
+        
           
           
         
