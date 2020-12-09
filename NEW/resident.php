@@ -1,6 +1,6 @@
 <?php
 require_once('connectDB.php');
-$result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
+$result=mysqli_query($mysqli, "SELECT * FROM residents");
 ?>
 
 <!DOCTYPE html>
@@ -236,11 +236,14 @@ $result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
                             </div>
                         </div>
                      </div>
+                    
+                   
+                    
+                    </div>
                         <div class="table-responsive table--no-card m-b-30">
                         <table class="table table-borderless table--no-card m-b-30 table-striped" id = "table">
                           
-                            <tr>
-                                <th>ID</th>
+                            <tr>                                
                                 <th>Last Name</th>
                                 <th>First Name</th>
                                 <th>Middle Initial</th>
@@ -260,11 +263,11 @@ $result=mysqli_query($mysqli,"SELECT*from residents ORDER by id ASC");
                             </tr>
                            
                             <?php
+                            
                               while($res=mysqli_fetch_array($result)){
 
                                   echo '<tr>';
-                                  echo '<td width=60>'. $res['id'] .'</td>' ;
-                                   echo '<td width=200>'. $res['lastName'] .'</td>' ;
+                                  echo '<td>'. $res['lastName'] .'</td>' ;
                                   echo '<td>'. $res['firstName'] .'</td>';
                                   echo '<td>'. $res['middleInitial'] .'</td>';
                                   echo '<td>'. $res['gender'] .'</td>';
