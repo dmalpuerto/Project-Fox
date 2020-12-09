@@ -1508,7 +1508,7 @@ section {
     color: #666;
 }
 
-.account-dropdown .info .content .email {
+.account-dropdown .info .content .welcome {
     font-size: 13px;
     color: #999;
     line-height: -webkit-calc(20/13);
@@ -1585,8 +1585,12 @@ section {
     background: #6b6054;
     overflow-y: auto;
 }
+.menu-sidebar a{
+    padding-right:20px;
 
+}
 .menu-sidebar .logo {
+    font-size: 20px;
     background: #f5f5f5;
     height: 75px;
     padding: 0 35px;
@@ -4223,20 +4227,9 @@ section {
 }
 
 /* ----- Table ----- */
-.table {
-    margin: 0;
-}
 
-.table-responsive.table--no-card {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-}
-
-.table-earning thead th {
+.table tr th {
+    margin-top: 0;
     background: #333;
     font-size: 16px;
     color: #fff;
@@ -4248,46 +4241,15 @@ section {
     white-space: nowrap;
 }
 
-.table-earning thead th.text-right {
-    padding-left: 15px;
-    padding-right: 65px;
-}
-
-.table-earning tbody td {
-    color: #808080;
-    padding: 12px 40px;
-    white-space: nowrap;
-}
-
-.table-earning tbody td.text-right {
-    padding-left: 15px;
-    padding-right: 65px;
-}
-
-.table-earning tbody tr:hover td {
-    color: #555;
-    cursor: pointer;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #fff;
-}
-
-.table-striped tbody tr:nth-of-type(even) {
-    background-color: #f5f5f5;
-}
-
-.table-top-countries tbody td {
-    white-space: nowrap;
-    font-size: 14px;
-    color: #fff;
-    padding: 14px 5px;
-    border-top: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.table-top-countries tbody tr:last-child td {
-    border-bottom: none;
+.table-responsive.table--no-card {
+    margin-top: 30px;
+    height: 500px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .table-wrap {
@@ -4894,6 +4856,14 @@ section {
     margin-top: 20px;
     margin-bottom: 0;
 }
+.line-separate {
+    height: 1px;
+    width: 100%;
+    background: #999;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
 
 .welcome2 {
     background: #393939;
@@ -4997,6 +4967,7 @@ section {
     text-transform: uppercase;
     font-weight: 300;
     color: rgba(128, 128, 128, 0.6);
+    
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -5008,32 +4979,69 @@ section {
 .statistic__item .icon {
     display: inline-block;
     position: absolute;
-    bottom: -50px;
-    right: -7px;
+    bottom: -20px;
+    right: 7px;
 }
-
-.statistic__item .icon i {
-    font-size: 180px;
+.statistic__item .icon2 {
+    display: inline-block;
+    position: absolute;
+    bottom: -40px;
+    right: 7px;
+    font-size:200px;
     color: #808080;
     opacity: .2;
     line-height: 1;
-    vertical-align: baseline;
+    vertical-align:bottom;
+}
+.statistic__item .icon3 {
+    display: inline-block;
+    position: absolute;
+    bottom: -20px;
+    right: -5px;
+    font-size:200px;
+    color: #808080;
+    opacity: .2;
+    line-height: 1;
+    vertical-align:bottom;
+}
+.statistic__item .icon4 {
+    display: inline-block;
+    position: absolute;
+    bottom: -25px;
+    right: 5px;
+    font-size:200px;
+    color: #808080;
+    opacity: .2;
+    line-height: 1;
+    vertical-align:bottom;
+}
+
+.statistic__item .icon a {
+    font-size:200px;
+    color: #808080;
+    opacity: .2;
+    line-height: 1;
+    vertical-align:bottom;
 }
 
 .statistic__item--green {
     background: #00b26f;
+    opacity: 0.9;
 }
 
 .statistic__item--orange {
     background: #ff8300;
+    opacity: 0.9;
 }
 
 .statistic__item--blue {
     background: #00b5e9;
+    opacity: 0.9;
 }
 
 .statistic__item--red {
     background: #fa4251;
+    opacity: 0.9;
 }
 
 /* ----- Statistic 2 ----- */
@@ -5053,10 +5061,12 @@ section {
 
 .statistic2 .statistic__item h2 {
     color: #fff;
+    
 }
 
 .statistic2 .statistic__item .desc {
     color: rgba(255, 255, 255, 0.6);
+    
 }
 
 /* ----- Progress ----- */
@@ -14649,4 +14659,6 @@ section {
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
 }
-
+.resident-table{
+    font-size: 50px;
+}
