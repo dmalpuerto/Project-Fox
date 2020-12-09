@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require_once('connectDB.php');
 ?>
 
 <?php
@@ -27,11 +27,12 @@ $emailAddress = $_POST['EmailAddress'];
 
  
         
-    $sql = "INSERT INTO residents (lastName, firstName, middleInitial, gender, civilStatus, birthDate, birthPlace, occupation, sector, nationality, religion, spouseName, spouseOccupation, cityAddress, provincialAddress, homeNumber1, homeNumber2, mobileNumber1, mobileNumber2, emailAddress) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO residents (lastName, firstName, middleInitial, gender, civilStatus, birthDate, birthPlace, occupation, sector, nationality, religion, spouseName, spouseOccupation, cityAddress, provincialAddress, homeNumber1, homeNumber2, mobileNumber1, mobileNumber2, emailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stminsert = $db->prepare($sql);
-    $result = $stminsert->execute([$lastName, $firstName, $middleInitial, $gender, $civilStatus, $birthDate, $birthPlace, $occupation, $sector, $nationality, $religion, $spouseName, spouseOccupation, $cityAddress, $provincialAddress, $homeNumber1, $homeNumber2, $mobileNumber1, $mobileNumber2, $emailAddress]);   
+    $result = $stminsert->execute([$lastName, $firstName, $middleInitial, $gender, $civilStatus, $birthDate, $birthPlace, $occupation, $sector, $nationality, $religion, $spouseName, $spouseOccupation, $cityAddress, $provincialAddress, $homeNumber1, $homeNumber2, $mobileNumber1, $mobileNumber2, $emailAddress]);  
+    
    if($result){
-        echo'<script>alert("USERNAME ALREADY TAKEN. PLEASE TRY AGAIN")</script>';
+        echo'Connected Successfully';
         
     }else{
         echo 'There were errors while saving this';
