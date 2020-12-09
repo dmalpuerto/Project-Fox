@@ -236,65 +236,50 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                             </div>
                         </div>
                      </div>
-                    
-                   
-                    
-                    </div>
-                        <div class="table-responsive table--no-card m-b-30">
+                    <div class="table-responsive table--no-card m-b-30">
                         <table class="table table-borderless table--no-card m-b-30 table-striped" id = "table">
-                          
-                            <tr>                                
-                                <th>Last Name</th>
-                                <th>First Name</th>
-                                <th>Middle Initial</th>
-                                <th>Gender</th>
-                                <th>Civil Status</th>
-                                <th>Birth Place</th>            
-                                <th>Birth Date</th>
-                                <th>Occupation</th>
-                                <th>Sector</th>
-                                <th>Nationality</th>
-                                <th>Religion</th>
-                                <th>City Address</th>
-                                <th>Provincial Address</th>
-                                <th>Home Number</th>
-                                <th>Mobile Number</th>
-                                <th>E-mail</th>
-                            </tr>
                            
-                            <?php
+                                <tr>                                
+                                    <th>Last Name</th>
+                                    <th>First Name</th>
+                                    <th>Middle Initial</th>
+                                    <th>Gender</th>
+                                    <th>Civil Status</th>
+                                    <th>Sector</th>
+                                    <th>Nationality</th>
+                                    
+                                </tr>
+                           <div class = "td">
+                                <?php
                             
-                              while($res=mysqli_fetch_array($result)){
-
+                                  while($res=mysqli_fetch_array($result)){
+                                
+                                                           
                                   echo '<tr>';
                                   echo '<td>'. $res['lastName'] .'</td>' ;
                                   echo '<td>'. $res['firstName'] .'</td>';
                                   echo '<td>'. $res['middleInitial'] .'</td>';
                                   echo '<td>'. $res['gender'] .'</td>';
                                   echo '<td>'. $res['civilStatus'] .'</td>';
-                                  echo '<td>'. $res['birthDate'] .'</td>';
-                                  echo '<td>'. $res['birthPlace'] .'</td>';
-                                  echo '<td>'. $res['occupation'] .'</td>';
                                   echo '<td>'. $res['sector'] .'</td>';
                                   echo '<td>'. $res['nationality'] .'</td>';
-                                  echo '<td>'. $res['religion'] .'</td>';
-                                  echo '<td>'. $res['cityAddress'] .'</td>';
-                                  echo '<td>'. $res['provincialAddress'] .'</td>';
-                                  echo '<td>'. $res['homeNumber1'] .'</td>';
-                                  echo '<td>'. $res['mobileNumber1'] .'</td>';
-                                  echo '<td>'. $res['emailAddress'] .'</td>';
+                                 
                                   echo '</tr>';              
                               }
-                              ?>    
-                            </table>
+                              ?>
+                                </div>
+                        </table>
                     </div>
+                   
+                    
+                    </div>
+                
+                        
                           
                </div>
             </div>
         </div>
-   </div>
-        
-                  
+     
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
       
