@@ -1,7 +1,22 @@
 <?php
 require_once('connectDB.php');
-$result=mysqli_query($mysqli, "SELECT * FROM residents");
+$sql="SELECT count(id) AS total FROM residents";
+$sqlfemale="SELECT count(id) AS total FROM residents where gender='Female'";
+$sqlmale="SELECT count(id) AS total FROM residents where gender='Male'";
+
+$result=mysqli_query($mysqli,$sql);
+$resultfemale=mysqli_query($mysqli,$sqlfemale);
+$resultmale=mysqli_query($mysqli,$sqlmale);
+
+$values=mysqli_fetch_assoc($result);
+$valuesfemale=mysqli_fetch_assoc($resultfemale);
+$valuesmale=mysqli_fetch_assoc($resultmale);
+
+$num_rows=$values['total'];
+$num_rows_female=$valuesfemale['total'];
+$num_rows_male=$valuesmale['total'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +78,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <ul class="list-unstyled navbar__list">
                       
                         <li>
-                            <a href="index.php">
+                            <a href="index.html">
                                 <i class="fas fa-home"></i>Dashboard</a>
                         </li>
                         <li>
@@ -240,6 +255,9 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         </div>
                     </section>
          <!-- END WELCOME-->
+    
+
+
                     
          <!-- RECORDS-->    
                 <section class="statistic statistic2">
@@ -247,7 +265,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <div class="row">
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--green">
-                                <h2 class="number">18</h2>
+                                <h2 class="number"><?php echo $num_rows; ?></h2>
                                 <span class="desc">Registered Population</span>
                                 <div class="icon">
                                      <a href="#">
@@ -258,7 +276,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--orange">
-                                <h2 class="number">10</h2>
+                                <h2 class="number"><?php echo $num_rows; ?></h2>
                                 <span class="desc">Registered Voters</span>
                                 <div class="icon2">
                                     <a href="#">
@@ -269,7 +287,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--blue">
-                                <h2 class="number">9</h2>
+                                <h2 class="number"><?php echo $num_rows_female; ?></h2>
                                 <span class="desc">Female</span>
                                 <div class="icon3">
                                    <a href="#">
@@ -280,46 +298,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--red">
-                                  
-                                 <?php
-                                
-
-                                class config {
-                                    public static function connect(){
-                                            $servername = "localhost";
-                                            $dbusername = "root";
-                                            $dbpassword = "";
-                                            $dbname = "barangay";
-                                            //database name is signupdb
-                                            
-                                            try {
-                                                $conn = new PDO ("mysql:host=$servername;dbname=$dbname",$dbusername,$dbpassword);
-                                                
-                                                $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-                                                }
-                                            
-                                            catch (PDOException $e) {
-                                                echo "Connection Failed! Please try again." . $e->getMessaege();
-                                            }
-                                            return $conn;
-                                    }
-                                }
-
-                                 $con = config::connect(); 
-                                     $query = "SELECT * FROM residents WHERE gender = :female";
-                                         $statement = $con->prepare($query);
-                                        $statement->execute();
-                                        $count = $statement->rowCount();
-                    
-                                       echo '<h2>$count</h2>';
-                                                   
-                                                      ?>
-
-                                    
-                               
+                                <h2 class="number"><?php echo $num_rows_male; ?></h2>
                                 <span class="desc">Male</span>
-                   
-
                                 <div class="icon4">
                                    <a href="#">
                                          <img src="images/icon/male.png" alt="male" height = "100" width="100"   />
