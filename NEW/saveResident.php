@@ -7,6 +7,7 @@ if(isset($_POST['register'])){
 $lastName = $_POST['LastName'];
 $firstName = $_POST['FirstName'];
 $middleInitial = $_POST['MiddleInitial'];
+$alias = $_POST['alias']
 $gender = $_POST['Gender'];
 $civilStatus = $_POST['CivilStatus'];
 $birthDate = $_POST['BirthDate'];
@@ -27,9 +28,9 @@ $emailAddress = $_POST['EmailAddress'];
 
  
         
-    $sql = "INSERT INTO residents (lastName, firstName, middleInitial, gender, civilStatus, birthDate, birthPlace, occupation, sector, nationality, religion, spouseName, spouseOccupation, cityAddress, provincialAddress, homeNumber1, homeNumber2, mobileNumber1, mobileNumber2, emailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO residents (lastName, firstName, middleInitial, alias, gender, civilStatus, birthDate, birthPlace, occupation, sector, nationality, religion, spouseName, spouseOccupation, cityAddress, provincialAddress, homeNumber1, homeNumber2, mobileNumber1, mobileNumber2, emailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stminsert = $db->prepare($sql);
-    $result = $stminsert->execute([$lastName, $firstName, $middleInitial, $gender, $civilStatus, $birthDate, $birthPlace, $occupation, $sector, $nationality, $religion, $spouseName, $spouseOccupation, $cityAddress, $provincialAddress, $homeNumber1, $homeNumber2, $mobileNumber1, $mobileNumber2, $emailAddress]);  
+    $result = $stminsert->execute([$lastName, $firstName, $middleInitial, $alias, $gender, $civilStatus, $birthDate, $birthPlace, $occupation, $sector, $nationality, $religion, $spouseName, $spouseOccupation, $cityAddress, $provincialAddress, $homeNumber1, $homeNumber2, $mobileNumber1, $mobileNumber2, $emailAddress]);  
     
    if($result){
         echo'Connected Successfully';
@@ -40,9 +41,6 @@ $emailAddress = $_POST['EmailAddress'];
 }else{
     echo 'No data';
 }
-
-
-
 
 
 

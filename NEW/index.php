@@ -2,7 +2,6 @@
 require_once('connectDB.php');
 $result=mysqli_query($mysqli, "SELECT * FROM residents");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +63,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <ul class="list-unstyled navbar__list">
                       
                         <li>
-                            <a href="index.html">
+                            <a href="index.php">
                                 <i class="fas fa-home"></i>Dashboard</a>
                         </li>
                         <li>
@@ -281,11 +280,43 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--red">
-                                 
-                                <h2 class="number">
-                                    <?php echo rowCount($db, "SELECT * FROM 'resident' WHERE 'gender' = 'Male'")?>
+                                  
+                                 <?php
+                                
 
-                                </h2>
+                                class config {
+                                    public static function connect(){
+                                            $servername = "localhost";
+                                            $dbusername = "root";
+                                            $dbpassword = "";
+                                            $dbname = "barangay";
+                                            //database name is signupdb
+                                            
+                                            try {
+                                                $conn = new PDO ("mysql:host=$servername;dbname=$dbname",$dbusername,$dbpassword);
+                                                
+                                                $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                                                }
+                                            
+                                            catch (PDOException $e) {
+                                                echo "Connection Failed! Please try again." . $e->getMessaege();
+                                            }
+                                            return $conn;
+                                    }
+                                }
+
+                                 $con = config::connect(); 
+                                     $query = "SELECT * FROM residents WHERE gender = :female";
+                                         $statement = $con->prepare($query);
+                                        $statement->execute();
+                                        $count = $statement->rowCount();
+                    
+                                       echo '<h2>$count</h2>';
+                                                   
+                                                      ?>
+
+                                    
+                               
                                 <span class="desc">Male</span>
                    
 

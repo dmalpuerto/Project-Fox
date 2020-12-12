@@ -64,7 +64,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <ul class="list-unstyled navbar__list">
                       
                         <li>
-                            <a href="index.html">
+                            <a href="index.php">
                                 <i class="fas fa-home"></i>Dashboard</a>
                         </li>
                         <li>
@@ -229,9 +229,12 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                         Add resident
                                     </button>
 
+
                                    <!-- <button class="au-btn au-btn-icon au-btn--blue" type="button" data-toggle="modal" data-target="#myModal">
                                         <i class="zmdi zmdi-plus"></i>Add resident</button>  ---->
                                 </div>
+                                <hr class="line-separate">
+
                                 
                             </div>
                         </div>
@@ -239,14 +242,17 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <div class="table-responsive table--no-card m-b-30">
                         <table class="table table-borderless table--no-card m-b-30 table-striped" id = "table">
                            
-                                <tr>                                
+                                <tr> 
+                                                              
                                     <th>Last Name</th>
                                     <th>First Name</th>
                                     <th>Middle Initial</th>
+                                    <th>Alias</th>
                                     <th>Gender</th>
                                     <th>Civil Status</th>
                                     <th>Sector</th>
                                     <th>Nationality</th>
+
                                     
                                 </tr>
                            <div class = "td">
@@ -256,9 +262,11 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                 
                                                            
                                   echo '<tr>';
+
                                   echo '<td>'. $res['lastName'] .'</td>' ;
                                   echo '<td>'. $res['firstName'] .'</td>';
                                   echo '<td>'. $res['middleInitial'] .'</td>';
+                                  echo '<td>'. $res['alias'] .'</td>';
                                   echo '<td>'. $res['gender'] .'</td>';
                                   echo '<td>'. $res['civilStatus'] .'</td>';
                                   echo '<td>'. $res['sector'] .'</td>';
@@ -331,16 +339,21 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                       
                       <div class = "row">
                          
-                          <div class= "col-md-4" style='margin-bottom: 20px;'>
+                          <div class= "col-md-3" style='margin-bottom: 20px;'>
                       <label>Lastname</label>
                       <input class="form-control" type='text' name='LastName' placeholder='Enter Lastname' required=''>
                       </div>
                           
-                          <div class= "col-md-4" style='margin-bottom: 20px;'>
+                          <div class= "col-md-3" style='margin-bottom: 20px;'>
                       <label>Firstname</label>
                       <input class="form-control" type='text' name='FirstName' placeholder='Enter Firstname' required=''>
                       </div>
-                              
+
+                      <div class = "col-md-3" style="margin-bottom: 20px">
+                      <label>Alias</label>
+                      <input type="text" name="alias" class="form-control" placeholder="Enter Alias" requiared>
+                      </div>
+                                                          
                             <div class= "col-md-2" style='margin-bottom: 20px;'>  
                       <label>M.I.</label>
                       <input class="form-control" type='text' name='MiddleInitial' placeholder='Enter Middle Name' required=''>
