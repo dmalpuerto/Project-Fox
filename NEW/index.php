@@ -90,7 +90,7 @@ $num_rows_male=$valuesmale['total'];
                                 <i class="far fa-file-text"></i>Certificate Issuance</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="index.html">Dashboard 1</a>
+                                    <a href="printClearance.php">Barangay Clearance</a>
                                 </li>
                                 <li>
                                     <a href="index2.html">Dashboard 2</a>
