@@ -7,7 +7,7 @@ if(isset($_POST['register'])){
 $lastName = $_POST['LastName'];
 $firstName = $_POST['FirstName'];
 $middleInitial = $_POST['MiddleInitial'];
-$alias = $_POST['alias']
+$alias = $_POST['alias'];
 $gender = $_POST['Gender'];
 $civilStatus = $_POST['CivilStatus'];
 $birthDate = $_POST['BirthDate'];
@@ -34,6 +34,12 @@ $emailAddress = $_POST['EmailAddress'];
     
    if($result){
         echo'Connected Successfully';
+        echo '<script>
+        window.history.go(-1);
+          </script>';
+          echo '<script>
+        window.loacation.reload();
+          </script>';
         
     }else{
         echo 'There were errors while saving this';

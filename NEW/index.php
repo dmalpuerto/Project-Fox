@@ -78,16 +78,30 @@ $num_rows_male=$valuesmale['total'];
                     <ul class="list-unstyled navbar__list">
                       
                         <li>
-                            <a href="index.html">
+                            <a href="index.php">
                                 <i class="fas fa-home"></i>Dashboard</a>
                         </li>
                         <li>
                             <a href="resident.php">
                                 <i class="fas fa-user-circle"></i>Resident Information</a>
                         </li>
-                        <li>
-                            <a href="#">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
                                 <i class="far fa-file-text"></i>Certificate Issuance</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="index.html">Dashboard 1</a>
+                                </li>
+                                <li>
+                                    <a href="index2.html">Dashboard 2</a>
+                                </li>
+                                <li>
+                                    <a href="index3.html">Dashboard 3</a>
+                                </li>
+                                <li>
+                                    <a href="index4.html">Dashboard 4</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">

@@ -1800,7 +1800,7 @@ section {
 .navbar-mobile-sub__list {
     display: none;
     padding-left: 30px;
-    background: #fff;
+    background: #6b6054 ;
 }
 
 .header-mobile .navbar-mobile .navbar-mobile-sub__list li a {
@@ -2777,7 +2777,7 @@ section {
 .header__navbar .header3-sub-list {
     position: absolute;
     min-width: 260px;
-    background: #fff;
+    background: #6b6054 ;
     -webkit-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
@@ -3081,8 +3081,8 @@ section {
 }
 
 .navbar-sidebar3 .has-sub.open > a {
-    background: #fff;
-    border: 1px solid #e5e5e5;
+    background: #6b6054;
+    border: 1px solid #6b6054;
 }
 
 @media (max-width: 1199px) {

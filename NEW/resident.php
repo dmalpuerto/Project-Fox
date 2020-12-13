@@ -46,6 +46,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="css/validate.css">
     
 
 </head>
@@ -66,14 +67,29 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         <li>
                             <a href="index.php">
                                 <i class="fas fa-home"></i>Dashboard</a>
+
                         </li>
                         <li>
                             <a href="resident.html">
                                 <i class="fas fa-user-circle"></i>Resident Information</a>
                         </li>
-                        <li>
-                            <a href="#">
+                       <li class="has-sub">
+                            <a class="js-arrow" href="#">
                                 <i class="far fa-file-text"></i>Certificate Issuance</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="index.html">Dashboard 1</a>
+                                </li>
+                                <li>
+                                    <a href="index2.html">Dashboard 2</a>
+                                </li>
+                                <li>
+                                    <a href="index3.html">Dashboard 3</a>
+                                </li>
+                                <li>
+                                    <a href="index4.html">Dashboard 4</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">
@@ -243,10 +259,10 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         <table class="table table-borderless table--no-card m-b-30 table-striped" id = "table">
                            
                                 <tr> 
-                                                              
+                                     <th>Resident ID</th>                         
                                     <th>Last Name</th>
                                     <th>First Name</th>
-                                    <th>Middle Initial</th>
+                                    <th >Middle Initial</th>
                                     <th>Alias</th>
                                     <th>Gender</th>
                                     <th>Civil Status</th>
@@ -255,18 +271,18 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 
                                     
                                 </tr>
-                           <div class = "td">
+                           <div class = "td" >
                                 <?php
                             
                                   while($res=mysqli_fetch_array($result)){
                                 
                                                            
                                   echo '<tr>';
-
+                                  echo '<td>'. $res['id'] .'</td>' ;
                                   echo '<td>'. $res['lastName'] .'</td>' ;
                                   echo '<td>'. $res['firstName'] .'</td>';
                                   echo '<td>'. $res['middleInitial'] .'</td>';
-                                  echo '<td>'. $res['alias'] .'</td>';
+                                  echo '<td>"'. $res['alias'] .'"</td>';
                                   echo '<td>'. $res['gender'] .'</td>';
                                   echo '<td>'. $res['civilStatus'] .'</td>';
                                   echo '<td>'. $res['sector'] .'</td>';
@@ -530,7 +546,16 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                           <div class="col-md-6" style="margin-bottom: 10px">
                               <label><b>Other Information</b></label>
                          </div>
-                      </div>                      
+                      </div> 
+                    <div class="row">
+                          <div class="col-md-4" style="margin-bottom: 10px">
+                              <label>Resident ID</label>
+                              <input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled="" class="form-control">
+                         </div>
+                      </div> 
+                      
+
+
                        <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-submit"  id="register" name="register">Save changes</button>
