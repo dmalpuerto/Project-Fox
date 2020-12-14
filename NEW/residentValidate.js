@@ -27,11 +27,7 @@ function myFunction(){
         alert('Error: Middle Initial. Maximum of two characters only.');
         return false;
     }
-    if(civilStatValue.value = Single){
-        spouseNameValue.disabled = true;
-        spouseNameValue.disabled = true;
-    }
-    //if all is validated
+        //if all is validated
     return true;
 
 }
