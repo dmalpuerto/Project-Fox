@@ -7,6 +7,33 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 <html lang="en">
 
 <head>
+	
+    <!------START: SCRIPT FOR CIVIL STATUS DROP DOWN LIST--------->
+   <script type = "text/javascript">
+        function disabletextbox(){
+            if (document.getElementById("CivilStatus").value === "Single"){
+               
+                document.getElementById("SpouseName").readOnly="true";
+                document.getElementById("SpouseOccupation").readOnly="true";
+            }
+            else if (document.getElementById("CivilStatus").value === "Separated"){
+                
+                document.getElementById("SpouseName").readOnly="true";
+                document.getElementById("SpouseOccupation").readOnly="true";
+            }
+            else if (document.getElementById("CivilStatus").value === "Widowed"){
+                
+                document.getElementById("SpouseName").readOnly="true";
+                document.getElementById("SpouseOccupation").readOnly="true";
+            } 
+            else {
+            document.getElementById("SpouseName").readOnly="";
+            document.getElementById("SpouseOccupation").readOnly="";
+            }
+        }
+    </script>
+    <!------END: SCRIPT FOR CIVIL STATUS DROP DOWN LIST--------->
+	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -15,7 +42,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
     <script src="webcam/webcam.js"></script>
 		  <script src="webcam/webcam2.js"></script>
     
-    <script>src="residentValidate.js"</script>
+    <script src="residentValidate.js"></script>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -280,7 +307,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                   echo '<td>'. $res['lastName'] .'</td>' ;
                                   echo '<td>'. $res['firstName'] .'</td>';
                                   echo '<td>'. $res['middleInitial'] .'</td>';
-                                  echo '<td>'. $res['alias'] .'"</td>';
+                                  echo '<td>"'. $res['alias'] .'"</td>';
                                   echo '<td>'. $res['gender'] .'</td>';
                                   echo '<td>'. $res['civilStatus'] .'</td>';
                                   echo '<td>'. $res['sector'] .'</td>';
@@ -355,22 +382,22 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                          
                           <div class= "col-md-3" style='margin-bottom: 20px;'>
                       <label>Lastname</label>
-                      <input class="form-control" type='text' name='LastName' placeholder='Enter Lastname' required=''>
+                      <input class="form-control" type='text' name='LastName' id='LastName' placeholder='Enter Lastname' required=''>
                       </div>
                           
                           <div class= "col-md-3" style='margin-bottom: 20px;'>
                       <label>Firstname</label>
-                      <input class="form-control" type='text' name='FirstName' placeholder='Enter Firstname' required=''>
+                      <input class="form-control" type='text' name='FirstName'id='FirstName' placeholder='Enter Firstname' required=''>
                       </div>
 
                       <div class = "col-md-3" style="margin-bottom: 20px">
                       <label>Alias</label>
-                      <input type="text" name="alias" class="form-control" placeholder="Enter Alias" requiared>
+                      <input type="text" name="alias" id="alias" class="form-control" placeholder="Enter Alias" requiared>
                       </div>
                                                           
                             <div class= "col-md-2" style='margin-bottom: 20px;'>  
                       <label>M.I.</label>
-                      <input class="form-control" type='text' name='MiddleInitial' placeholder='Enter Middle Name' required=''>
+                      <input class="form-control" type='text' name='MiddleInitial'  id='MiddleInitial' placeholder='Enter Middle Name' required=''>
                           </div>
                           
                           </div>
@@ -381,7 +408,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                       <div class = "row">
                           <div class = "col-md-3" style='margin-bottom: 20px;'>
                       <label>Gender</label>
-                      <select class="form-control" type='text' name='Gender'>
+                      <select class="form-control" type='text' name='Gender' id='Gender'>
 					<option> </option>
 					   <option>Male</option>
                         <option>Female</option>
@@ -389,7 +416,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                             </div>
                           <div class = "col-md-4" style='margin-bottom: 20px;'>
                       <label>Civil Status</label>
-                      <select class="form-control" type='text' name='CivilStatus'>
+                       <select class="form-control" type='text' name='CivilStatus'id='CivilStatus' onChange = "disabletextbox();">
                        <option> </option>
 					   <option>Single</option>
                         <option>Married</option>
@@ -399,7 +426,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                           </div>
                           <div class = "col-md-3" style='margin-bottom: 20px;'>
                              <label>Voter Status</label>
-                      <select class="form-control" type='text' name='voterStatus'>
+                       <select class="form-control" type='text' name='voterStatus'id='voterStatus'>
                        <option> </option>
                        <option>Yes</option>
                         <option>No</option>
@@ -412,12 +439,12 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                           
                           <div class ="col-md-5" style='margin-bottom: 20px;'>
                       <label>Birth Date</label>
-                        <input class="form-control" id='bd' type='date' name='BirthDate' placeholder='Enter Birthday' required=''>
+                      <input class="form-control" id='BirthDate' type='date' name='BirthDate' placeholder='Enter Birthday' required=''>
                           </div>
                               
 					   <div class ="col-md-5" style='margin-bottom: 20px;'>
 					  <label>Birth Place</label>
-                        <input class = "form-control" id="BirthPlace" name="BirthPlace" type = "text" placeholder="Enter Birth Place" required=''>
+                         <input class = "form-control" id="BirthPlace" name="BirthPlace" type = "text" placeholder="Enter Birth Place" required=''>
                       </div>
                      </div>
                           
@@ -432,7 +459,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <div class ="col-md-5" style='margin-bottom: 20px;'>
 
                           <label>Sector</label>
-                        <select class= "form-control" type="text" name="Sector" required="">
+                        <select class= "form-control" type="text" name="Sector"  id="Sector" required="">
                         <option> </option>
                         <option>Private</option>
                         <option>Public</option>
@@ -455,12 +482,12 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                       
                        <div class ="col-md-5" style='margin-bottom: 20px;'>
                       <label>Nationality</label>
-                        <input class="form-control" type='text' name='Nationality' placeholder='Enter Nationality' required=''>
+                        <input class="form-control" type='text' name='Nationality' id='Nationality' placeholder='Enter Nationality' required=''>
                        </div>  
                            
                         <div class ="col-md-5" style='margin-bottom: 20px;'>
 					  <label>Religion/Belief</label>
-					  <input class="form-control" type="text" name="Religion" placeholder="Enter Religion/Belief" required=''>
+					  <input class="form-control" type="text" name="Religion" id="Religion" placeholder="Enter Religion/Belief" required=''>
                        </div>   
                     
                     </div>
@@ -470,14 +497,14 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                      <div class ="col-md-5" style='margin-bottom: 20px;'>
 
                       <label>Spouse's Name</label>
-                      <input class = "form-control" type="text" name="SpouseName"
+                      <input class = "form-control" type="text" name="SpouseName"  id="SpouseName" 
                              placeholder="Enter Spouse's Name" required=''>
                       </div>
                             
                     <div class ="col-md-5" style='margin-bottom: 20px;'>
                         
                     <label>Spouse's Occupation</label>
-                     <input class = "form-control" type="text" name="SpouseOccupation" placeholder="Enter Spouse's Occupation" required=''>
+                     <input class = "form-control" type="text" name="SpouseOccupation" id="SpouseOccupation" placeholder="Enter Spouse's Occupation" required=''>
                         
                     </div>     
                       </div>
@@ -491,7 +518,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                       
                       <div class = "col-md-10" style="margin-bottom: 20px;">
                           <label>City Address</label>
-                          <input class="form-control" type="text" name="CityAddress" placeholder="Enter City Address" required=''>
+                          <input class="form-control" type="text" name="CityAddress" id="CityAddress" placeholder="Enter City Address" required=''>
                           
                           </div>
             
@@ -502,7 +529,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                           
                        <div class="col-md-10" style="margin-bottom: 20px">
                               <label>Provincial Address</label>
-                          <input class= "form-control" type= "text" name="ProvincialAddress" placeholder="Enter Provincial Address">
+                         <input class= "form-control" type= "text" name="ProvincialAddress" id="ProvincialAddress" placeholder="Enter Provincial Address">
                           
                                 
                                  
@@ -513,35 +540,35 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                       <div class ="row">
                       <div class="col-md-5" style="margin-bottom: 20px">
                           <label>Home Number 1</label>
-                          <input class = "form-control" type= "tel" name= "HomeNumber1" placeholder="+63 9xxxxxxxxx">
+                          <input class = "form-control" type= "tel" name= "HomeNumber1" id= "HomeNumber1" placeholder="+63 9xxxxxxxxx">
                           
                           </div> 
                           
                           
                         <div class = "col-md-5" style="margin-bottom: 20px">
                           <label>Mobile Number 1</label>
-                            <input class = "form-control" type= "tel" name= "MobileNumber1" placeholder="+63 9xxxxxxxxx">
+                            <input class = "form-control" type= "tel" name= "MobileNumber1" id= "MobileNumber1" placeholder="+63 9xxxxxxxxx">
                           </div>
                       </div>
                       
                        <div class ="row">
                       <div class="col-md-5" style="margin-bottom: 20px">
                           <label>Home Number 2</label>
-                          <input class = "form-control" type= "tel" name= "HomeNumber2" placeholder="+63 9xxxxxxxxx">
+                          <input class = "form-control" type= "tel" name= "HomeNumber2" id= "HomeNumber2" placeholder="+63 9xxxxxxxxx">
                           
                           </div> 
                           
                           
                         <div class = "col-md-5" style="margin-bottom: 20px">
                           <label>Mobile Number 2</label>
-                            <input class = "form-control" type= "tel" name= "MobileNumber2" placeholder="+63 9xxxxxxxxx">
+                            <input class = "form-control" type= "tel" name= "MobileNumber2" id= "MobileNumber2" placeholder="+63 9xxxxxxxxx">
                           </div>
                       </div>
                       
                       <div class="row">
                       <div class = "col-md-8" style="margin-bottom: 20px">
                           <label>Email Address</label>
-                          <input class="form-control" type= "email" name="EmailAddress" placeholder="name@domain.com">
+                          <input class="form-control" type= "email" name="EmailAddress" id="EmailAddress" placeholder="name@domain.com">
                            
                           </div>
                           
@@ -565,7 +592,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 
                        <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary"  id="register" name="register">Save changes</button>
+                            <button class="btn btn-submit"  id="register" name="register" onClick="return myFunction()">Save changes</button>
                           </div>
                     </div>
                 </form>
