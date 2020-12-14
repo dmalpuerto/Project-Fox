@@ -58,9 +58,7 @@
 			
 					
 						<div class="flex1 text-left">
-							<div class="img">
-								<img src="image/<?php echo $row['Logo'] ?>">
-							</div>
+							
 						</div>
 						<div class="flex1 text-center">
 							<h5>Republic of the Philippines</h5>
@@ -74,7 +72,7 @@
 					
                                 <td><img class="image" src="images/icon/dangcol.png"></td>
                               
-                                <td><img class="image" src="<?php echo $row['img'] ?>"></td>
+                              
                               
 				</div>
 			</div>
@@ -136,9 +134,19 @@
 			</div>
 		</div>
 		<div class=" margin-top-50">
-			<h4 style="width: 100xp;">Paid OR No <span style="margin-left: 20px;">:<?php echo $_GET['OR'] ?></span></h4>
+			<h4 style="width: 100xp;">Paid OR No <span style="margin-left: 20px;"><div contenteditable ="true"></div>
+			</span></h4>
 			<h4>Issued on <span style="margin-left: 38px;"></span>:<span id="month2"></span> <span id="date2"></span> <span id="year2"></span><h4>
-			<h4>Issued at <span  style="margin-left: 43px;"></span>:Barangay ></h4>
+			
+				<div class="row">
+			
+					<div class= "col-md-3">
+			<h4>Issued at <span  style="margin-left: 43px;"></span>:Barangay</h4></div>
+
+			<div class="col-md-3"><div contenteditable ="true" style="padding: 2px"><h4>Enter Barangay name</h4></div></div>
+
+				</div>
+
 		</div>
 		
 	</div>
