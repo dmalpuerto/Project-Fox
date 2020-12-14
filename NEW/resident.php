@@ -259,7 +259,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         <table class="table table-borderless table--no-card m-b-30 table-striped" id = "table">
                            
                                 <tr> 
-                                     <th>Resident ID</th>                         
+                                     <th>Resident ID</th> 
+                                    <th>Image</th>
                                     <th>Last Name</th>
                                     <th>First Name</th>
                                     <th >Middle Initial</th>
@@ -268,6 +269,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                     <th>Civil Status</th>
                                     <th>Sector</th>
                                     <th>Nationality</th>
+                                    <th>Action</th>
 
                                     
                                 </tr>
@@ -279,10 +281,11 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                                            
                                   echo '<tr>';
                                   echo '<td>'. $res['id'] .'</td>' ;
+                                  echo '<td>'.'<img src="data:images/jpeg;base64,'.base64_encode(stripslashes($res['images'])).'"/>' .'</td>';
                                   echo '<td>'. $res['lastName'] .'</td>' ;
                                   echo '<td>'. $res['firstName'] .'</td>';
                                   echo '<td>'. $res['middleInitial'] .'</td>';
-                                  echo '<td>"'. $res['alias'] .'"</td>';
+                                  echo '<td>'. $res['alias'] .'"</td>';
                                   echo '<td>'. $res['gender'] .'</td>';
                                   echo '<td>'. $res['civilStatus'] .'</td>';
                                   echo '<td>'. $res['sector'] .'</td>';
@@ -322,7 +325,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
       <div class="modal-body">
           
        <div class="info">
-                <form method='POST' action='saveResident.php' class="form" id="form" name = "form">
+                <form method='POST' action='saveResident.php' class="form" id="form" name = "form" enctype="multipart/form-data" >
                   <div class="col-lg-12">
 
                       
@@ -344,7 +347,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                          
                       </div>
                        <div class = "col-md-6" style='margin-bottom: 20px;'>
-                        <input class="form-control" type='file' name='images2'>
+                        <input class="form-control" type='file' name="images" id="images">
                           </div>
                       
                       

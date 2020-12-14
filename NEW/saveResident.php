@@ -4,6 +4,7 @@ require_once('connectDB.php');
 
 <?php
 if(isset($_POST['register'])){
+    $images = addslashes(file_get_contents($_FILES['images']['tmp_name']));
 $lastName = $_POST['LastName'];
 $firstName = $_POST['FirstName'];
 $middleInitial = $_POST['MiddleInitial'];
@@ -28,9 +29,9 @@ $emailAddress = $_POST['EmailAddress'];
 
  
         
-    $sql = "INSERT INTO residents (lastName, firstName, middleInitial, alias, gender, civilStatus, birthDate, birthPlace, occupation, sector, nationality, religion, spouseName, spouseOccupation, cityAddress, provincialAddress, homeNumber1, homeNumber2, mobileNumber1, mobileNumber2, emailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO residents (images, lastName, firstName, middleInitial, alias, gender, civilStatus, birthDate, birthPlace, occupation, sector, nationality, religion, spouseName, spouseOccupation, cityAddress, provincialAddress, homeNumber1, homeNumber2, mobileNumber1, mobileNumber2, emailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stminsert = $db->prepare($sql);
-    $result = $stminsert->execute([$lastName, $firstName, $middleInitial, $alias, $gender, $civilStatus, $birthDate, $birthPlace, $occupation, $sector, $nationality, $religion, $spouseName, $spouseOccupation, $cityAddress, $provincialAddress, $homeNumber1, $homeNumber2, $mobileNumber1, $mobileNumber2, $emailAddress]);  
+    $result = $stminsert->execute([$images, $lastName, $firstName, $middleInitial, $alias, $gender, $civilStatus, $birthDate, $birthPlace, $occupation, $sector, $nationality, $religion, $spouseName, $spouseOccupation, $cityAddress, $provincialAddress, $homeNumber1, $homeNumber2, $mobileNumber1, $mobileNumber2, $emailAddress]);  
     
    if($result){
         echo'Connected Successfully';
