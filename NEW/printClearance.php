@@ -6,6 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/bootstrap.min.css" rel="stylesheet"> 
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+
+
+
+     <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    
   
 	<style>
 		.print{
@@ -49,7 +72,7 @@
 			<div class="flex1">
 				<div class="text-right">
 					
-                                <td><img class="image" src="image/<?php echo $row['img'] ?>"></td>
+                                <td><img class="image" src="images/icon/dangcol.png"></td>
                               
                                 <td><img class="image" src="<?php echo $row['img'] ?>"></td>
                               
@@ -67,15 +90,24 @@
 		</div>
 		
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>THIS IS TO CERTIFY that <b class="uppercase"><?php echo $row['FirstName'] . " " . $row['LastName']; ?></b>
-						legal age and a bonafide resident of Barangay <?php echo $_GET['barangay'].','
-					.$_GET['municipal'].','.$_GET['province']; ?>, is personally known to
+
+					<div class="row">
+						
+
+						<div class="col-md-3">
+					<h4>THIS IS TO CERTIFY that</h4>
+				</div>
+						<div class="col-md-5">
+						<div  contenteditable="true" style="padding: 3px" >
+  						<b style="text-decoration: underline; font-color:black;"><h4>Enter you name here.</h4></b>
+						</div></div></div>
+						<h4>legal age and a bonafide resident of Barangay , is personally known to
 						me to be a person of good moral character and law-abiding citizen in the community.</h4>
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
-					<h4>That <b class="uppercase"></b>  has not been convicted
+					 <b class="uppercase"><h4>That  has not been convicted
 					 of any crime whatsoever neither is there any pending case filed against her before the 
-					 Barangay Court of Justice on the said barangay.</h4>
+					 Barangay Court of Justice on the said barangay.</h4></b>
 				</div>
 				<div class="content margin-top-50" style='text-indent: 50px;'>
 					<h4>This certification is issued to the interested party for whatever legal and lawful 
@@ -153,11 +185,18 @@
 	}
 	
 </script>
+
+<button id = "printpagebutton" type="button" class="btn btn-primary" onclick="myFunction()" style="width: 100px; margin: 50px">Print</button>
+
 <script>
 	function myFunction() {
+		 var printButton = document.getElementById("printpagebutton");
+	     printButton.style.visibility = 'hidden';
 	    window.print();
+	    printButton.style.visibility = 'visible';
+	   
+
 	}
-	myFunction();
 </script>
 </body>
 </html>
