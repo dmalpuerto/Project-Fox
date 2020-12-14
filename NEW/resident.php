@@ -9,26 +9,26 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 <head>
 	
     <!------START: SCRIPT FOR CIVIL STATUS DROP DOWN LIST--------->
-    <script type = "text/javascript">
+   <script type = "text/javascript">
         function disabletextbox(){
             if (document.getElementById("CivilStatus").value === "Single"){
-                
-                document.getElementById("SpouseName").disabled="true";
-                document.getElementById("SpouseOccupation").disabled="true";
+               
+                document.getElementById("SpouseName").readOnly="true";
+                document.getElementById("SpouseOccupation").readOnly="true";
             }
             else if (document.getElementById("CivilStatus").value === "Separated"){
                 
-                document.getElementById("SpouseName").disabled="true";
-                document.getElementById("SpouseOccupation").disabled="true";
+                document.getElementById("SpouseName").readOnly="true";
+                document.getElementById("SpouseOccupation").readOnly="true";
             }
             else if (document.getElementById("CivilStatus").value === "Widowed"){
                 
-                document.getElementById("SpouseName").disabled="true";
-                document.getElementById("SpouseOccupation").disabled="true";
+                document.getElementById("SpouseName").readOnly="true";
+                document.getElementById("SpouseOccupation").readOnly="true";
             } 
             else {
-            document.getElementById("SpouseName").disabled="";
-            document.getElementById("SpouseOccupation").disabled="";
+            document.getElementById("SpouseName").readOnly="";
+            document.getElementById("SpouseOccupation").readOnly="";
             }
         }
     </script>
