@@ -3,18 +3,25 @@ require_once('connectDB.php');
 $sql="SELECT count(id) AS total FROM residents";
 $sqlfemale="SELECT count(id) AS total FROM residents where gender='Female'";
 $sqlmale="SELECT count(id) AS total FROM residents where gender='Male'";
+$sqlvoterStatus = "SELECT count(id) AS total FROM residents where voterStatus = 'Yes'";
 
 $result=mysqli_query($mysqli,$sql);
 $resultfemale=mysqli_query($mysqli,$sqlfemale);
 $resultmale=mysqli_query($mysqli,$sqlmale);
+$resultvoterStatus=mysqli_query($mysqli,$sqlvoterStatus);
+
 
 $values=mysqli_fetch_assoc($result);
 $valuesfemale=mysqli_fetch_assoc($resultfemale);
 $valuesmale=mysqli_fetch_assoc($resultmale);
+$valuesvoterStatus=mysqli_fetch_assoc($resultvoterStatus);
+
+
 
 $num_rows=$values['total'];
 $num_rows_female=$valuesfemale['total'];
 $num_rows_male=$valuesmale['total'];
+$num_rows_voterStatus = $valuesvoterStatus['total'];
 ?>
 
 <!DOCTYPE html>
@@ -93,14 +100,9 @@ $num_rows_male=$valuesmale['total'];
                                     <a href="printClearance.php">Barangay Clearance</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Dashboard 2</a>
+                                    <a href="printIndigency.php">Barangay Indigency</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                                
                             </ul>
                         </li>
                         <li>
@@ -290,7 +292,7 @@ $num_rows_male=$valuesmale['total'];
                         </div>
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--orange">
-                                <h2 class="number"><?php echo $num_rows; ?></h2>
+                                <h2 class="number"><?php echo $num_rows_voterStatus; ?></h2>
                                 <span class="desc">Registered Voters</span>
                                 <div class="icon2">
                                     <a href="#">

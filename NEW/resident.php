@@ -70,7 +70,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 
                         </li>
                         <li>
-                            <a href="resident.html">
+                            <a href="resident.php">
                                 <i class="fas fa-user-circle"></i>Resident Information</a>
                         </li>
                        <li class="has-sub">
@@ -81,14 +81,9 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                     <a href="printClearance.php">Barangay Clearance</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Dashboard 2</a>
+                                    <a href="printIndigency.php">Barangay Indigency</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                               
                             </ul>
                         </li>
                         <li>
@@ -384,7 +379,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                   <div class="col-lg-12" style='margin-bottom: 30px;'>
                       
                       <div class = "row">
-                          <div class = "col-md-5" style='margin-bottom: 20px;'>
+                          <div class = "col-md-3" style='margin-bottom: 20px;'>
                       <label>Gender</label>
                       <select class="form-control" type='text' name='Gender'>
 					<option> </option>
@@ -392,7 +387,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         <option>Female</option>
                       </select> 
                             </div>
-                          <div class = "col-md-5" style='margin-bottom: 20px;'>
+                          <div class = "col-md-4" style='margin-bottom: 20px;'>
                       <label>Civil Status</label>
                       <select class="form-control" type='text' name='CivilStatus'>
                        <option> </option>
@@ -402,6 +397,15 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 						<option>Widowed</option>
                       </select>     
                           </div>
+                          <div class = "col-md-3" style='margin-bottom: 20px;'>
+                             <label>Voter Status</label>
+                      <select class="form-control" type='text' name='voterStatus'>
+                       <option> </option>
+                       <option>Yes</option>
+                        <option>No</option>
+                      </select>     
+                          </div>
+
 					</div>
                       
                       <div class ="row">

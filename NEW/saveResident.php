@@ -13,6 +13,7 @@ $gender = $_POST['Gender'];
 $civilStatus = $_POST['CivilStatus'];
 $birthDate = $_POST['BirthDate'];
 $birthPlace = $_POST['BirthPlace'];
+$voterStatus = $_POST['voterStatus'];
 $occupation = $_POST['Occupation'];
 $sector = $_POST['Sector'];
 $nationality = $_POST['Nationality'];
@@ -29,9 +30,9 @@ $emailAddress = $_POST['EmailAddress'];
 
  
         
-    $sql = "INSERT INTO residents (images, lastName, firstName, middleInitial, alias, gender, civilStatus, birthDate, birthPlace, occupation, sector, nationality, religion, spouseName, spouseOccupation, cityAddress, provincialAddress, homeNumber1, homeNumber2, mobileNumber1, mobileNumber2, emailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO residents (images, lastName, firstName, middleInitial, alias, gender, civilStatus, birthDate, birthPlace, voterStatus, occupation, sector, nationality, religion, spouseName, spouseOccupation, cityAddress, provincialAddress, homeNumber1, homeNumber2, mobileNumber1, mobileNumber2, emailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stminsert = $db->prepare($sql);
-    $result = $stminsert->execute([$images, $lastName, $firstName, $middleInitial, $alias, $gender, $civilStatus, $birthDate, $birthPlace, $occupation, $sector, $nationality, $religion, $spouseName, $spouseOccupation, $cityAddress, $provincialAddress, $homeNumber1, $homeNumber2, $mobileNumber1, $mobileNumber2, $emailAddress]);  
+    $result = $stminsert->execute([$images, $lastName, $firstName, $middleInitial, $alias, $gender, $civilStatus, $birthDate, $birthPlace, $voterStatus, $occupation, $sector, $nationality, $religion, $spouseName, $spouseOccupation, $cityAddress, $provincialAddress, $homeNumber1, $homeNumber2, $mobileNumber1, $mobileNumber2, $emailAddress]);  
     
    if($result){
         echo'Connected Successfully';
