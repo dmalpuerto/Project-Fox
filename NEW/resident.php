@@ -584,8 +584,12 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <div class="row">
                           <div class="col-md-4" style="margin-bottom: 10px">
                               <label>Resident ID</label>
-                              <input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled="" class="form-control">
-                         </div>
+                              <input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled="" class="form-control"></div>
+
+                             
+
+
+
                       </div> 
                       
 
@@ -602,6 +606,33 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
   </div>
 </div>
     
+
+
+<script>
+    var y = new Date();
+    var m = new Date();
+    var d = new Date();
+    
+    var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var day = d.getDate("1-31");
+
+    if (day == 1 && day != 11) {
+        document.getElementById("date").innerHTML = d.getDate("1-31") + "st";
+    }else if(day == 2 && day != 12){
+        document.getElementById("date").innerHTML = d.getDate("1-31") + "nd";
+    }else if(day == 3 && day != 13){
+        document.getElementById("date").innerHTML = d.getDate("1-31") + "rd";
+    }else{
+        document.getElementById("date").innerHTML = d.getDate("1-31") + "th";
+    }
+    document.getElementById("year").innerHTML = y.getFullYear("yyyyy");
+    document.getElementById("month").innerHTML = month[m.getMonth("0-11")];
+
+        document.getElementById("date2").innerHTML = d.getDate("1-31") + ",";
+    document.getElementById("year2").innerHTML = y.getFullYear("yyyyy");
+    document.getElementById("month2").innerHTML = month[m.getMonth("0-11")];
+</script>
+
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->

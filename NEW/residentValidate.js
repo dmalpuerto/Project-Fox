@@ -27,6 +27,10 @@ function myFunction(){
         alert('Error: Middle Initial. Maximum of two characters only.');
         return false;
     }
+
+
+
+    
         //if all is validated
     return true;
 
