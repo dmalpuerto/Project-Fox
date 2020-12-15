@@ -343,7 +343,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                   echo '<td>'. $res['emailAddress'] .'</td>';
                                       
                                   echo '<td><input type="button" name="editbtn" value="Edit" class="btn btn-success editbtn"></button></td>';
-                                  echo '<td><input type="button" name="deletebtn" value="Delete" class="btn btn-danger deletebtn"></button></td>';
+                                  echo '<td><a href="delete.php?id='. $res['id'] . '">Delete</a></td>';
                                  echo '</tr>';              
                               }
                               ?>
@@ -910,6 +910,52 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
   </div>
 </div>
 <!--#########################################################################################################################################-->
+        <!--##################################################################################################################################################-->
+    
+    
+    <!-- DELEYE MODAL FORM -->
+<div class="modal fade bd-example-modal-lg" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Resident Registration Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+       <div class="info">
+                <form method='POST' action='delete.php' class="form" id="form" name = "form" enctype="multipart/form-data" >
+                  <div class="col-lg-12">
+
+
+                    
+                      
+                      
+        
+                      
+                      <div class = "row">
+                          <input type="hidden" name="delete_id" id="delete_id"> 
+                      
+                        <h4>Do you want to delete this data?</h4>
+
+                       <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                            <button type="submit" class="btn btn-primary"  id="deletedata" name="deletedata">Yes. Delete it</button>
+                          </div>
+            
+                </form>
+              </div>   
+      </div>
+    </div>
+  </div>
+</div>
+<!--#########################################################################################################################################-->
+    
+    
+    
+    
     
     
 
@@ -962,6 +1008,46 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    
+    <!---DELETE-->
+           <!--Edit Moda-->
+    <script>  
+    $(document).ready(function(){
+       $('.deletebtn').on('click', function(){
+           $('#deletemodal').modal('show');
+           
+            $tr = $(this).closest('tr');
+           
+              var data= $tr.children("td").map(function(){
+              return $(this).text();
+              }).get();
+           
+           console.log(data);
+           $('#delete_id').val(data[1]);
+          
+           
+       });
+    });
+        
+        
+        
+        
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
         <!--Edit Moda-->
     <script>  
