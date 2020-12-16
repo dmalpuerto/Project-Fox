@@ -714,8 +714,13 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                           <div class = "col-md-3" style='margin-bottom: 20px;'>
                       <label>Gender</label>
                       <select class="form-control" type='text' name='Gender' id="gender">
+<<<<<<< HEAD
                     <option> </option>
                        <option value="Male" >Male</option>
+=======
+					<option> </option>
+					   <option value="Male" >Male</option>
+>>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                         <option value="Female">Female</option>
                       </select> 
                             </div>
@@ -725,10 +730,17 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                       <label>Civil Status</label>
                       <select class="form-control" type='text' name='CivilStatus' id="civilStatus" >
                        <option> </option>
+<<<<<<< HEAD
                        <option>Single</option>
                         <option>Married</option>
                         <option>Separated</option>
                         <option>Widowed</option>
+=======
+					   <option>Single</option>
+                        <option>Married</option>
+						<option>Separated</option>
+						<option>Widowed</option>
+>>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                       </select>     
                           </div>
                           <div class = "col-md-3" style='margin-bottom: 20px;'>
@@ -740,7 +752,11 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                       </select>     
                           </div>
 
+<<<<<<< HEAD
                     </div>
+=======
+					</div>
+>>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                       
                       <div class ="row">
                           
@@ -749,8 +765,13 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         <input class="form-control" id='birthDate' type='date' name='BirthDate' placeholder='Enter Birthday' required=''>
                           </div>
                               
+<<<<<<< HEAD
                        <div class ="col-md-5" style='margin-bottom: 20px;'>
                       <label>Birth Place</label>
+=======
+					   <div class ="col-md-5" style='margin-bottom: 20px;'>
+					  <label>Birth Place</label>
+>>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                         <input class = "form-control" id="birthPlace" name="BirthPlace" type = "text" placeholder="Enter Birth Place" required=''>
                       </div>
                      </div>
@@ -793,14 +814,23 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                        </div>  
                            
                         <div class ="col-md-5" style='margin-bottom: 20px;'>
+<<<<<<< HEAD
                       <label>Religion/Belief</label>
                       <input class="form-control" type="text" name="Religion" id="religion" placeholder="Enter Religion/Belief" required=''>
+=======
+					  <label>Religion/Belief</label>
+					  <input class="form-control" type="text" name="Religion" id="religion" placeholder="Enter Religion/Belief" required=''>
+>>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                        </div>   
                     
                     </div>
                       
                         <div class= "row">
+<<<<<<< HEAD
                       
+=======
+					  
+>>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                      <div class ="col-md-5" style='margin-bottom: 20px;'>
 
                       <label>Spouse's Name</label>
@@ -1042,7 +1072,15 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
     
     
     
+     <script type="text/javascript">
+    $('body').on('hidden.bs.modal', function () {
+    if($('.modal.in').length > 0)
+    {
+        $('body').addClass('modal-open');
+    }
+});
     
+    </script>
     
     
     
