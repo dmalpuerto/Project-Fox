@@ -323,8 +323,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                                            
                                 echo '<tr>';
 
-                                  echo '<td><button type="button" class="btn btn-primary editbtn">Edit</td>'; 
-                                echo '<td><a onclick="confirmationDelete(this)" class="btn btn-danger" href="delete.php?id='. $res['id'] . '" role="button ">Delete</a></td>';
+                                  echo '<td><button type="button" class="btn btn-primary editbtn">&nbsp &nbspEdit &nbsp &nbsp</td>'; 
+                                echo '<td><a onclick="confirmationDelete(this)" class="btn btn-danger" href="delete.php?id='. $res['id'] . '" role="button "> Delete</a></td>';
                                   echo '<td>'. $res['id'] .'</td>' ;
                                   echo '<td>'.'<img src="data:images/jpeg;base64,'.base64_encode(stripslashes($res['images'])).'"/>' .'</td>';
                                   echo '<td>'. $res['lastName'] .'</td>' ;
