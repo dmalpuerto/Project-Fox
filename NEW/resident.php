@@ -50,6 +50,9 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
 
+
+
+
     <!-- Title Page-->
     <title>Project Fox</title>
 
@@ -280,7 +283,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <div class="table-responsive table--no-card m-b-30">
                         <table class="table table-borderless table--no-card m-b-30 table-striped" id = "table">
                            
-                                 <tr>  <th>Edit</th>
+                                <tr> 
+                                    <th>Edit</th>
                                     <th>Delete</th>
 
                                       <th>Resident ID</th> 
@@ -307,6 +311,9 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                     <th>Home Number 2</th>
                                     <th>Mobile Number 2</th>
                                     <th>Email</th>
+                                    
+
+                                    
                                 </tr>
                            <div class = "td" >
                                 <?php
@@ -315,7 +322,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                 
                                                            
                                 echo '<tr>';
-                                      echo '<td><button type="button" class="btn btn-primary editbtn">Edit</td>'; 
+
+                                  echo '<td><button type="button" class="btn btn-primary editbtn">Edit</td>'; 
                                  echo '<td><a class="btn btn-danger" href="delete.php?id='. $res['id'] . '" role="button">Delete</a></td>';
                                   echo '<td>'. $res['id'] .'</td>' ;
                                   echo '<td>'.'<img src="data:images/jpeg;base64,'.base64_encode(stripslashes($res['images'])).'"/>' .'</td>';
@@ -343,7 +351,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                   echo '<td>'. $res['emailAddress'] .'</td>';
                                       
                                  
-                                 echo '</tr>';             
+                                 echo '</tr>';              
                               }
                               ?>
                                 </div>
@@ -365,7 +373,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 <!-- Button trigger modal -->
 
 <!-- Modal -->
-<div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow-y: scroll">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -626,7 +634,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 
                        <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            <button class="btn btn-submit"  id="register" name="register" onClick="return myFunction()">Save changes</button>
+                            <button  type="submit"class="btn btn-success"  id="register" name="register" onClick="return myFunction()">Save changes</button>
                           </div>
                     </div>
                 </form>
@@ -640,7 +648,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
     
     <!-- EDIT MODAL FORM -->
 <div class="modal fade bd-example-modal-lg" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-lg" role="document" >
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Edit Resident Registration Form</h5>
@@ -714,13 +722,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                           <div class = "col-md-3" style='margin-bottom: 20px;'>
                       <label>Gender</label>
                       <select class="form-control" type='text' name='Gender' id="gender">
-<<<<<<< HEAD
                     <option> </option>
                        <option value="Male" >Male</option>
-=======
-					<option> </option>
-					   <option value="Male" >Male</option>
->>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                         <option value="Female">Female</option>
                       </select> 
                             </div>
@@ -730,17 +733,10 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                       <label>Civil Status</label>
                       <select class="form-control" type='text' name='CivilStatus' id="civilStatus" >
                        <option> </option>
-<<<<<<< HEAD
                        <option>Single</option>
                         <option>Married</option>
                         <option>Separated</option>
                         <option>Widowed</option>
-=======
-					   <option>Single</option>
-                        <option>Married</option>
-						<option>Separated</option>
-						<option>Widowed</option>
->>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                       </select>     
                           </div>
                           <div class = "col-md-3" style='margin-bottom: 20px;'>
@@ -752,11 +748,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                       </select>     
                           </div>
 
-<<<<<<< HEAD
                     </div>
-=======
-					</div>
->>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                       
                       <div class ="row">
                           
@@ -765,13 +757,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                         <input class="form-control" id='birthDate' type='date' name='BirthDate' placeholder='Enter Birthday' required=''>
                           </div>
                               
-<<<<<<< HEAD
                        <div class ="col-md-5" style='margin-bottom: 20px;'>
                       <label>Birth Place</label>
-=======
-					   <div class ="col-md-5" style='margin-bottom: 20px;'>
-					  <label>Birth Place</label>
->>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                         <input class = "form-control" id="birthPlace" name="BirthPlace" type = "text" placeholder="Enter Birth Place" required=''>
                       </div>
                      </div>
@@ -814,23 +801,14 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                        </div>  
                            
                         <div class ="col-md-5" style='margin-bottom: 20px;'>
-<<<<<<< HEAD
                       <label>Religion/Belief</label>
                       <input class="form-control" type="text" name="Religion" id="religion" placeholder="Enter Religion/Belief" required=''>
-=======
-					  <label>Religion/Belief</label>
-					  <input class="form-control" type="text" name="Religion" id="religion" placeholder="Enter Religion/Belief" required=''>
->>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                        </div>   
                     
                     </div>
                       
                         <div class= "row">
-<<<<<<< HEAD
                       
-=======
-					  
->>>>>>> 908bf1861854b4d29e7dedfaa0f452587d35c9b1
                      <div class ="col-md-5" style='margin-bottom: 20px;'>
 
                       <label>Spouse's Name</label>
@@ -929,7 +907,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 
                        <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-submit"  id="updatedata" name="updatedata">Save changes</button>
+                            <button type="submit" class="btn btn-success"  id="updatedata" name="updatedata">Save changes</button>
                           </div>
                     </div>
                 </form>
@@ -1068,11 +1046,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
     
     
     
-    
-    
-    
-    
-     <script type="text/javascript">
+    <script type="text/javascript">
     $('body').on('hidden.bs.modal', function () {
     if($('.modal.in').length > 0)
     {
@@ -1081,6 +1055,7 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
 });
     
     </script>
+    
     
     
     
