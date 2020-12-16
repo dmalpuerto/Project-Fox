@@ -280,7 +280,9 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                     <div class="table-responsive table--no-card m-b-30">
                         <table class="table table-borderless table--no-card m-b-30 table-striped" id = "table">
                            
-                                <tr> 
+                                 <tr>  <th>Edit</th>
+                                    <th>Delete</th>
+
                                       <th>Resident ID</th> 
                                     <th>Image</th>
                                     <th>Last Name</th>
@@ -305,10 +307,6 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                     <th>Home Number 2</th>
                                     <th>Mobile Number 2</th>
                                     <th>Email</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-
-                                    
                                 </tr>
                            <div class = "td" >
                                 <?php
@@ -317,6 +315,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                 
                                                            
                                 echo '<tr>';
+                                      echo '<td><button type="button" class="btn btn-primary editbtn">Edit</td>'; 
+                                 echo '<td><a class="btn btn-danger" href="delete.php?id='. $res['id'] . '" role="button">Delete</a></td>';
                                   echo '<td>'. $res['id'] .'</td>' ;
                                   echo '<td>'.'<img src="data:images/jpeg;base64,'.base64_encode(stripslashes($res['images'])).'"/>' .'</td>';
                                   echo '<td>'. $res['lastName'] .'</td>' ;
@@ -342,9 +342,8 @@ $result=mysqli_query($mysqli, "SELECT * FROM residents");
                                   echo '<td>'. $res['mobileNumber2'] .'</td>';
                                   echo '<td>'. $res['emailAddress'] .'</td>';
                                       
-                                  echo '<td><input type="button" name="editbtn" value="Edit" class="btn btn-success editbtn"></button></td>';
-                                  echo '<td><a href="delete.php?id='. $res['id'] . '">Delete</a></td>';
-                                 echo '</tr>';              
+                                 
+                                 echo '</tr>';             
                               }
                               ?>
                                 </div>
